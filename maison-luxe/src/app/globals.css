@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 20, 20, 30;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 252, 252, 255;
+}
+
+/* Optimisation des performances */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .luxury-gradient {
+    background: linear-gradient(135deg, #ea4bff 0%, #2dd4bf 100%);
+  }
+  
+  .vivid-gradient {
+    background: linear-gradient(135deg, #ff6b35 0%, #f77bff 50%, #2dd4bf 100%);
+  }
+  
+  .accent-gradient {
+    background: linear-gradient(135deg, #14b8a6 0%, #a855f7 100%);
+  }
+  
+  .shimmer-bg {
+    background: linear-gradient(
+      110deg,
+      rgba(234, 75, 255, 0.05) 0%,
+      rgba(45, 212, 191, 0.05) 50%,
+      rgba(234, 75, 255, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  .blob-shape {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  
+  .blob-animate {
+    animation: morph 8s ease-in-out infinite;
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* Scrollbar minimaliste et moderne */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ea4bff, #14b8a6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #f77bff, #2dd4bf);
+}
+
+/* Selection moderne */
+::selection {
+  background: rgba(234, 75, 255, 0.2);
+  color: inherit;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* React Select custom styles */
+.react-select__control {
+  min-height: 42px !important;
+  border-radius: 0.375rem !important;
+}
+
+.react-select__control--is-focused {
+  border-color: #14b8a6 !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.1) !important;
+}
+
+.react-select__option--is-focused {
+  background-color: #f0fdfa !important;
+}
+
+.react-select__option--is-selected {
+  background-color: #14b8a6 !important;
+}
+
+.react-select__menu {
+  z-index: 100 !important;
+  font-size: 0.95rem !important;
+}
+
+.react-select__single-value {
+  font-size: 0.95rem !important;
+}

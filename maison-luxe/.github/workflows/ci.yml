@@ -42,6 +42,8 @@ jobs:
             nc -z localhost 27017 && echo "Mongo ready" && exit 0 || sleep 1;
           done
           echo "Mongo did not start" && exit 1
+      - name: Seed CI database
+        run: node scripts/ci-seed.js
       - name: TypeScript check
         run: npx tsc --noEmit
       - name: Run tests (including integration)
